@@ -1,0 +1,53 @@
+---
+title: "Notes"
+author: "Kubra"
+format: html
+editor: visual
+---
+
+##class notes
+
+*creating new directory, make sure delete previous one that you previously cloned no to get any error about to clone a remote repository into your existing directory.
+
+*When you are using Quarto, source mode preferred.
+
+*Do not delete: "---" begining and end of quarto.
+
+Here is R code for:
+
+*Read in data, extract female mean body mass and brain size, and make a bivariate
+plot of the relationship between those variables on untransformed and log scale*
+
+
+```{r}
+library(tidyverse)
+f <- file.choose()
+d <- read_csv(f, col_names = TRUE)
+body <- d$Body_mass_female_mean
+brain <- d$Brain_Size_Species_Mean
+plot(body, brain)
+plot(log(body), log(brain))
+```
+
+------------------------------------------------------------------------
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
